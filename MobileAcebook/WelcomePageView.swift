@@ -27,13 +27,21 @@ struct WelcomePageView: View {
                     .accessibilityIdentifier("makers-logo")
                 
                 Spacer()
-
-                Button("Sign Up") {
-                    // TODO: sign up logic
-                }
-                .accessibilityIdentifier("signUpButton")
                 
-                Spacer()
+//                HStack{
+                    
+                    Button("Sign Up") {
+                        // TODO: sign up logic
+                    }
+                    .accessibilityIdentifier("signUpButton")
+                    
+                    
+                    Button("Login") {
+                        // TODO: sign up logic
+                    }
+                    .accessibilityIdentifier("LogInButton")
+                    Spacer()
+//                }
             }
         }
     }
