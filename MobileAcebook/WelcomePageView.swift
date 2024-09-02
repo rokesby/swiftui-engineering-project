@@ -40,7 +40,7 @@ struct WelcomePageView: View {
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .font(.system(.body, design: .monospaced))
                     
-            
+                
                     Button("Login") {
                         print("Button Tapped")
                     
