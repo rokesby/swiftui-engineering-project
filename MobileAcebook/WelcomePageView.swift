@@ -27,7 +27,7 @@ struct WelcomePageView: View {
                     .background(Color.black)
                     .font(.system(.body, design: .monospaced))
                 
-                Spacer()
+                
                 HStack{
                    
                     Button("Sign Up") {
@@ -39,7 +39,7 @@ struct WelcomePageView: View {
                     .foregroundColor(Color.white)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .font(.system(.body, design: .monospaced))
-                    
+                    .padding(40)
                 
                     Button("Login") {
                         print("Button Tapped")
@@ -51,6 +51,7 @@ struct WelcomePageView: View {
                     .foregroundColor(Color.white)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
                     .font(.system(.body, design: .monospaced))
+                    .padding(40)
                     
                     }
                 }
