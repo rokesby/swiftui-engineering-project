@@ -48,6 +48,12 @@ struct LoginPageView: View {
                 Button("Login") {
                     print("Button Tapped")
                     }
+                .accessibilityIdentifier("LogInButton")
+                .buttonStyle(.borderedProminent)
+                .foregroundColor(Color.white)
+                .buttonBorderShape(.roundedRectangle(radius: 20))
+                .font(.system(.body, design: .monospaced))
+                .padding(40)
                 }
                 
                 
