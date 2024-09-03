@@ -25,13 +25,13 @@ struct ProfilePageView: View {
                     
                     VStack(spacing: 10) {
                         // Image Post
-                        PostView(imageName: "post1", caption: "Had a great time hiking!")
+                        ImagePostView(imageName: "post1", caption: "Had a great time hiking!")
                         
                         // Text-Only Post
                         TextPostView(text: "Enjoying a quiet evening with a good book. Highly recommend 'The Midnight Library'!")
                         
                         // Another Image Post
-                        PostView(imageName: "post2", caption: "Loving the new cafe in town!")
+                        ImagePostView(imageName: "post2", caption: "Loving the new cafe in town!")
                         
                         // Another Text-Only Post
                         TextPostView(text: "Excited for the weekend! Anyone up for a road trip?")
@@ -90,7 +90,7 @@ struct ProfilePageView: View {
     }
 }
 
-struct PostView: View {
+struct ImagePostView: View {
     var imageName: String
     var caption: String
     
