@@ -13,8 +13,5 @@ struct MobileAcebookApp: App {
         WindowGroup {
             WelcomePageView()
         }
-        WindowGroup {
-            SignUpPageView()
-        }
     }
 }
