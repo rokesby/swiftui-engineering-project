@@ -2,14 +2,14 @@
 //  WelcomePageView.swift
 //  MobileAcebook
 //
-//  Created by Josué Estévez Fernández on 30/09/2023.
+//  Created by MARYA Estévez Fernández on 30/09/2023.
 //
 
 import SwiftUI
 
 
 
-import SwiftUI
+
 
 struct WelcomePageView: View {
     var body: some View {
