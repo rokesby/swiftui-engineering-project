@@ -41,17 +41,14 @@ struct WelcomePageView: View {
                     .font(.system(.body, design: .monospaced))
                     .padding(40)
                 
-                    Button("Login") {
-                        print("Button Tapped")
+                    NavigationLink("Login Page", destination: LoginPageView())
                     
-                        // TODO: sign up logic
-                    }
-                    .accessibilityIdentifier("LogInButton")
-                    .buttonStyle(.borderedProminent)
-                    .foregroundColor(Color.white)
-                    .buttonBorderShape(.roundedRectangle(radius: 20))
-                    .font(.system(.body, design: .monospaced))
-                    .padding(40)
+                        .accessibilityIdentifier("LogInButton")
+                        .buttonStyle(.borderedProminent)
+                        .foregroundColor(Color.white)
+                        .buttonBorderShape(.roundedRectangle(radius: 20))
+                        .font(.system(.body, design: .monospaced))
+                        .padding(40)
                     
                     }
                 }
@@ -59,7 +56,6 @@ struct WelcomePageView: View {
             }
         }
     }
-    
     struct WelcomePageView_Previews: PreviewProvider {
         static var previews: some View {
             WelcomePageView()
