@@ -42,9 +42,9 @@ struct LoginPageView: View {
                         }
                     
                 }
-                
                 .frame(width: 300.0, height: 150.0)
                 .scrollContentBackground(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
+                
                 Button("Login") {
                     print("Button Tapped")
                     }
