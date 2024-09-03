@@ -23,7 +23,7 @@ struct ProfilePageView: View {
                     }
                     .padding()
                     
-                    VStack(spacing: 20) {
+                    VStack(spacing: 10) {
                         // Image Post
                         PostView(imageName: "post1", caption: "Had a great time hiking!")
                         
