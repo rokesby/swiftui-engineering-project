@@ -10,45 +10,58 @@ import SwiftUI
 struct WelcomePageView: View {
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
             VStack {
-                Spacer()
-
-                Text("Welcome to Acebook!")
-                    .font(.largeTitle)
-                    .padding(.bottom, 20)
-                    .accessibilityIdentifier("welcomeText")
-
-                Spacer()
-
                 Image("Logo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
-                    .accessibilityIdentifier("makers-logo")
+                    .accessibilityIdentifier("Acebook-Logo")
+                
+                Text("Welcome to acebook!")
+                    .font(.largeTitle)
+                    .padding(.bottom, 20)
+                    .accessibilityIdentifier("welcomeText")
+                    .foregroundColor(Color.white)
+                    .background(Color.black)
+                    .font(.system(.body, design: .monospaced))
                 
                 Spacer()
-                
-//                HStack{
-                    
+                HStack{
+                   
                     Button("Sign Up") {
+                        print("Button Tapped")
                         // TODO: sign up logic
                     }
                     .accessibilityIdentifier("signUpButton")
+                    .buttonStyle(.borderedProminent)
+                    .foregroundColor(Color.white)
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
+                    .font(.system(.body, design: .monospaced))
                     
-                    
+                
                     Button("Login") {
+                        print("Button Tapped")
+                    
                         // TODO: sign up logic
                     }
                     .accessibilityIdentifier("LogInButton")
-                    Spacer()
-//                }
+                    .buttonStyle(.borderedProminent)
+                    .foregroundColor(Color.white)
+                    .buttonBorderShape(.roundedRectangle(radius: 20))
+                    .font(.system(.body, design: .monospaced))
+                    
+                    }
+                }
+                
             }
         }
     }
-}
-
-struct WelcomePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomePageView()
+    
+    struct WelcomePageView_Previews: PreviewProvider {
+        static var previews: some View {
+            WelcomePageView()
+        }
     }
-}
+
