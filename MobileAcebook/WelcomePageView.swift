@@ -18,7 +18,7 @@ struct WelcomePageView: View {
                     .scaledToFit()
                     .frame(width: 200, height: 200)
                     .accessibilityIdentifier("Acebook-Logo")
-                
+                    
                 Text("Welcome to acebook!")
                     .font(.largeTitle)
                     .padding(.bottom, 20)
