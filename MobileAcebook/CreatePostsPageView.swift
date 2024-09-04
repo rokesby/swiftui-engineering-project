@@ -44,6 +44,7 @@ struct CreatePostsPageView: View {
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(image: $selectedImage)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
