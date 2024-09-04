@@ -22,10 +22,9 @@ struct LoginPageView: View {
                     .scaledToFit()
                     .frame(width: 200, height: 200)
                     .accessibilityIdentifier("Acebook-Logo")
-                
                 Text("Login")
                     .font(.largeTitle)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 20.0)
                     .accessibilityIdentifier("Login Button")
                     .foregroundColor(Color.white)
                     .background(Color.black)
