@@ -44,7 +44,6 @@
 			remoteGlobalIDString = AE5D85AB2AC8A221009680C6;
 			remoteInfo = MobileAcebook;
 		};
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +78,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 0; 
+		};
 		AE5D85B92AC8A224009680C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
