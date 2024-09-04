@@ -53,17 +53,13 @@ struct CreatePostsPageView: View {
                 Button(action: {
                     isImagePickerPresented = true
                 }) {
-                    TextField("1What's on your mind...", text: $postMessage)
+                    TextField("What's on your mind...", text: $postMessage)
                         .padding()
+//                        .frame(width:100, height:100)
                         .scrollContentBackground(.hidden)
                 }
                 .padding()
             }
-            
-//            Text("Hello, \(postMessage)")
-//                .padding()
-            
-            Spacer()
 
             Form {
                 Section {
