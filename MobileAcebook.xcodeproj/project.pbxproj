@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		919D73622C886922000BA941 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D73612C886922000BA941 /* NavigationBar.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
 		AE5D85B42AC8A224009680C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B32AC8A224009680C6 /* Assets.xcassets */; };
 		AE5D85B72AC8A224009680C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B62AC8A224009680C6 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		919D73612C886922000BA941 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAcebookApp.swift; sourceTree = "<group>"; };
 		AE5D85B32AC8A224009680C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0; 
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AE5D85B92AC8A224009680C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -133,6 +135,7 @@
 				F8E51E862C861086005418F9 /* CreatePostsPageView.swift */,
 				F8E51E882C861095005418F9 /* ProfilePageView.swift */,
 				F12EC4E22C873A1700467C46 /* ImagePicker.swift */,
+				919D73612C886922000BA941 /* NavigationBar.swift */,
 			);
 			path = MobileAcebook;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				F12EC4E32C873A1800467C46 /* ImagePicker.swift in Sources */,
 				F52702852C872FB500C5B8E7 /* PostsViewModel.swift in Sources */,
 				F8E51E872C861086005418F9 /* CreatePostsPageView.swift in Sources */,
+				919D73622C886922000BA941 /* NavigationBar.swift in Sources */,
 				AE5D85E82AC9B29A009680C6 /* User.swift in Sources */,
 				AE5D85DA2AC8A337009680C6 /* WelcomePageView.swift in Sources */,
 			);
