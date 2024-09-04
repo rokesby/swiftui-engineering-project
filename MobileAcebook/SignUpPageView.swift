@@ -77,8 +77,6 @@ struct SignUpPageView: View {
                             .font(.system(.body, design: .monospaced))
                         // TODO: sign up logic
                     }
-                    
-                    
                 }
                  .frame(width: 300.0, height: 250.0)
                  .scrollContentBackground(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
@@ -98,7 +96,6 @@ struct SignUpPageView: View {
                         }
                         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
                 }
-                
                 Button("Signup") {
                     print("Button Tapped")
                     }
@@ -109,12 +106,7 @@ struct SignUpPageView: View {
                 .font(.system(.body, design: .monospaced))
                 .padding(40)
                 }
-            
-                
             }
-        
-        
-    
     }
     }
 
