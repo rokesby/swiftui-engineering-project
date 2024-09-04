@@ -55,8 +55,6 @@ struct LoginPageView: View {
                 .font(.system(.body, design: .monospaced))
                 .padding(40)
                 }
-                
-                
             }
         }
     }

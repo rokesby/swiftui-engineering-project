@@ -75,10 +75,10 @@ struct SignUpPageView: View {
                             .font(.system(.body, design: .monospaced))
                         // TODO: sign up logic
                     }
-//                    .frame(width: 250.0, height: 250.0)
-                    .scrollContentBackground(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
                     
                 }
+                 .frame(width: 300.0, height: 250.0)
+                 .scrollContentBackground(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
                 
                 Button("Signup") {
                     print("Button Tapped")
