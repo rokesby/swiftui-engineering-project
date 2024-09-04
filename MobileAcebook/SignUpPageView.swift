@@ -13,6 +13,7 @@ struct SignUpPageView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var confirmed_password = ""
+    @State private var checkedBox = false
     
 //    This is the image stuff added just now 3rd september by Marya
     @State private var selectedImage: UIImage?
@@ -23,6 +24,7 @@ struct SignUpPageView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
+            
             VStack {
                 Image("Logo")
                     .resizable()
@@ -75,11 +77,25 @@ struct SignUpPageView: View {
                             .font(.system(.body, design: .monospaced))
                         // TODO: sign up logic
                     }
-                    
                 }
                  .frame(width: 300.0, height: 250.0)
                  .scrollContentBackground(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
-                
+                HStack{
+                    Text("Terms and Conditions")
+                        .foregroundStyle(Color.white)
+                        .font(.system(.body, design: .monospaced, weight: .light))
+                    Image(systemName: checkedBox ? "checkmark.circle.fill" : "circle")
+                        .font(.system(size: 10))
+                        .scaleEffect(checkedBox ? 1.25 : 1.0)
+                        .foregroundColor(checkedBox ? .green : .black)
+                        .padding()
+                        .onTapGesture {
+                            withAnimation(.easeInOut(duration: 1.0)){
+                                checkedBox.toggle()
+                            }
+                        }
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                }
                 Button("Signup") {
                     print("Button Tapped")
                     }
@@ -90,10 +106,10 @@ struct SignUpPageView: View {
                 .font(.system(.body, design: .monospaced))
                 .padding(40)
                 }
-                
             }
-        }
     }
+    }
+
 
     
     struct SignUpPageView_Previews: PreviewProvider {
