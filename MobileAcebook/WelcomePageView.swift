@@ -33,9 +33,9 @@ struct WelcomePageView: View {
                         .font(.system(.body, design: .monospaced))
                     
                     HStack {
-                        Button("Sign Up") {
-                            print("Button Tapped")
-                            // TODO: sign up logic
+                        NavigationLink(destination: SignUpPageView()){
+                            Text("Sign Up")
+                            
                         }
                         .accessibilityIdentifier("signUpButton")
                         .buttonStyle(.borderedProminent)
