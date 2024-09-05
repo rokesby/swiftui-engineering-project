@@ -37,14 +37,18 @@ struct CreatePostsPageView: View {
                 }
                 Button("Submit") {
                     // Action for the button
+                    
                 }
+                
             }
+            CustomNavigationBar()
         }
         .padding()
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(image: $selectedImage)
         }
         .navigationBarBackButtonHidden(true)
+        
     }
 }
 
