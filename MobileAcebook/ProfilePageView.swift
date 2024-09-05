@@ -130,6 +130,7 @@ struct TextPostView: View {
             }
             .padding([.leading, .trailing, .bottom])
         }
+        
         .background(Color.gray.opacity(0.2))
         .cornerRadius(10)
     }
