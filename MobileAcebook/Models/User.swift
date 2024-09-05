@@ -9,5 +9,5 @@ public struct User {
     let username: String
     let email: String
     let password: String
-    let image: String
+    let imgUrl: String
 }
