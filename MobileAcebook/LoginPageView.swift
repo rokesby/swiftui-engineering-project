@@ -15,6 +15,7 @@ struct LoginPageView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
+                
             VStack {
                 Image("Logo")
                     .resizable()

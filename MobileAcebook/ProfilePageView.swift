@@ -2,93 +2,53 @@ import SwiftUI
 
 struct ProfilePageView: View {
     var body: some View {
-        VStack {
-            ScrollView {
-                VStack {
+        NavigationView {
+            VStack {
+                ScrollView {
                     VStack {
-                        Image("profilePicture") // Replace with your actual image name
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle().stroke(Color.white, lineWidth: 4)
-                            )
-                            .shadow(radius: 10)
+                        VStack {
+                            Image("profilePicture") // Replace with your actual image name
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 150, height: 150)
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle().stroke(Color.white, lineWidth: 4)
+                                )
+                                .shadow(radius: 10)
+                            
+                            Text("John King")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .padding(.top, 8)
+                        }
+                        .padding()
                         
-                        Text("John King")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .padding(.top, 8)
+                        VStack(spacing: 10) {
+                            // Image Post
+                            ImagePostView(imageName: "post1", caption: "Had a great time hiking!")
+                            
+                            // Text-Only Post
+                            TextPostView(text: "Enjoying a quiet evening with a good book. Highly recommend 'The Midnight Library'!")
+                            
+                            // Another Image Post
+                            ImagePostView(imageName: "post2", caption: "Loving the new cafe in town!")
+                            
+                            // Another Text-Only Post
+                            TextPostView(text: "Excited for the weekend! Anyone up for a road trip?")
+                        }
+                        .padding([.leading, .trailing])
                     }
-                    .padding()
-                    
-                    VStack(spacing: 10) {
-                        // Image Post
-                        ImagePostView(imageName: "post1", caption: "Had a great time hiking!")
-                        
-                        // Text-Only Post
-                        TextPostView(text: "Enjoying a quiet evening with a good book. Highly recommend 'The Midnight Library'!")
-                        
-                        // Another Image Post
-                        ImagePostView(imageName: "post2", caption: "Loving the new cafe in town!")
-                        
-                        // Another Text-Only Post
-                        TextPostView(text: "Excited for the weekend! Anyone up for a road trip?")
+                }
+                CustomNavigationBar()
+                
+            }
+                        .background(Color.black.edgesIgnoringSafeArea(.all))
+                        .navigationBarHidden(true) // Hides the default navigation bar
                     }
-                    .padding([.leading, .trailing])
+        .navigationBarBackButtonHidden(true)
                 }
             }
-            
-            HStack {
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "house.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                    Text("Home")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                    Text("My Profile")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                    Text("Create Post")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-                Spacer()
-                
-                VStack {
-                    Image(systemName: "arrowshape.turn.up.left.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(.white)
-                    Text("Logout")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-                Spacer()
-            }
-            .padding()
-            .background(Color.gray.opacity(0.8))
-        }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
-    }
-}
 
 struct ImagePostView: View {
     var imageName: String

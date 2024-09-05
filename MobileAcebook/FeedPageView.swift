@@ -23,7 +23,9 @@ struct ContentView: View {
             }
             .navigationTitle("Postings")
         }
+        .navigationBarBackButtonHidden(true)
     }
+        
 }
 
 // View for a single post
