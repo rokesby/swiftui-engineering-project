@@ -76,6 +76,7 @@ class AuthenticationServiceClass: AuthenticationServiceProtocol {
         request.httpMethod = "POST"
         request.httpBody = jsonData
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        THE LINE ABOVE WAS THE SOURCE OF ALL OF OUR ISSUES LOL - MARYA
         
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

@@ -139,6 +139,7 @@ struct SignUpPageView: View {
     @State private var password = ""
     @State private var confirmed_password = ""
     
+    
     // This is the image stuff added just now 3rd september by Marya
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
@@ -146,6 +147,8 @@ struct SignUpPageView: View {
     // This is the signup authentication stuff added by Marya in the early hours of Thursday 5th September
     @State private var showAlert = false
     @State private var alertMessage = ""
+    
+//    @State private var isSignedUp = false
 
     let authService = AuthenticationServiceClass()
     
@@ -209,8 +212,10 @@ struct SignUpPageView: View {
                 .frame(width: 300.0, height: 250.0)
                 .scrollContentBackground(.hidden)
                 
+//                NavigationLink(destination: ContentView(), isActive: $isSignedUp)
                 Button("Signup") {
                     signUp()
+                    isSignedUp = true
                 }
                 .accessibilityIdentifier("Signup Button")
                 .buttonStyle(.borderedProminent)
@@ -245,10 +250,21 @@ struct SignUpPageView: View {
 //        let imgUrl = selectedImage?.jpegData(compressionQuality: 0.2)?.base64EncodedString() ?? ""
         
         var imgBase64String = ""
-        if let imageData = selectedImage?.jpegData(compressionQuality: 0.2) {
-            let imgBase64String = imageData.base64EncodedString()
-            // Use imgBase64String in your upload request
+        
+        // Check if selectedImage is nil
+        if selectedImage == nil {
+            print("Error: selectedImage is nil")
+        } else {
+            print("Image is selected successfully")
         }
+
+        if let imageData = selectedImage?.jpegData(compressionQuality: 0.01) {
+            imgBase64String = imageData.base64EncodedString()
+            print("Image base64 string generated successfully")
+        } else {
+            print("Image was not generated successfully")
+        }
+        print(imgBase64String)
 
         let user = User(username: username,
                         email: email,
