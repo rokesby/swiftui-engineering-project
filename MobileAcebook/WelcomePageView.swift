@@ -17,12 +17,14 @@ struct WelcomePageView: View {
             ZStack {
                 Color.black
                     .ignoresSafeArea()
+                    
                 VStack {
                     Image("Logo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                         .accessibilityIdentifier("Acebook-Logo")
+                        
                     
                     Text("Welcome to acebook!")
                         .font(.largeTitle)
