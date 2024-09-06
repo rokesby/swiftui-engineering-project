@@ -10,45 +10,62 @@ struct CreatePostsPageView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .center) {
-                // Display the selected image, or a button to select one
-                if let image = selectedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
-                        .padding()
-                }
-                
-                // TextField for the post message
-                TextField("What's on your mind...", text: $postMessage)
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-                
-                // Form with buttons
-                Form {
-                    Button("Select an Image") {
-                        isImagePickerPresented = true
+            ZStack {
+                Color.black
+                    .ignoresSafeArea()
+                    VStack(alignment: .center) {
+                        Image("Logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                            .accessibilityIdentifier("Acebook-Logo")
+                        Form {
+                        // Display the selected image, or a button to select one
+                        if let image = selectedImage {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200, height: 200)
+                                .padding()
+                        } else {
+                            Button(action: {
+                            }) {
+                                TextField("What's on your mind...", text: $postMessage)
+//                                    .scrollContentBackground(.hidden)
+//                                    .sizeToFit()
+//                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 300.0, height: 150.0)
+                                    .padding()
+                            }
+                            .padding([.leading, .trailing, .bottom])
+                        }
+                            Button ("selected an Image", action:{
+                                
+                                isImagePickerPresented = true
+                            })
+                            NavigationLink(destination: ContentView()) {
+                                Text("Submit")
+                            }
+                            
+                        }
+                        CustomNavigationBar()
+                        
+                        .background(Color.gray.opacity(0.2))
+                        .edgesIgnoringSafeArea(.all)
+
                     }
-                    
-                    // Submit button that calls createPost()
-                    Button("Submit") {
-                        createPost()
+                    .scrollContentBackground(.hidden)
+//                    .ignoresSafeArea()
+                    .edgesIgnoringSafeArea(.all)
+                    .sheet(isPresented: $isImagePickerPresented) {
+                        ImagePicker(image: $selectedImage)
                     }
                 }
-                .frame(width: 300, height: 150)
-            }
-            .padding()
-            .sheet(isPresented: $isImagePickerPresented) {
-                ImagePicker(image: $selectedImage)
-            }
-            .navigationBarBackButtonHidden(false)
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Post Creation"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                .navigationBarBackButtonHidden(true)
+
             }
         }
+        
     }
     
     // CreatePost function modified to work with current ViewState
@@ -96,6 +113,10 @@ struct CreatePostsPageView: View {
 }
 
 
+
+
+
+// Preview
 
 struct CreatePostsPageView_Previews: PreviewProvider {
     static var previews: some View {
