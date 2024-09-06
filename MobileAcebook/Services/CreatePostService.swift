@@ -9,14 +9,15 @@ import Foundation
 
 class PostServiceClass {
     func createPost(postContent: [String: Any], completion: @escaping (String?, Error?) -> Void) {
-        guard let url = URL(string: "https://yourapi.com/posts") else { return }
+        guard let url = URL(string: "http://localhost:3000/posts") else { return }
         
         let token = UserDefaults.standard.object(forKey: "token") as? String ?? "No token"
+        print(token)
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer\(token)", forHTTPHeaderField: "Authorization")
         
         // Convert postContent dictionary to JSON
         do {
