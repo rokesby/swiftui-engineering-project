@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91431B9B2C88AB7C00611E3A /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91431B9A2C88AB7C00611E3A /* ProfilePageViewModel.swift */; };
 		919D73622C886922000BA941 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D73612C886922000BA941 /* NavigationBar.swift */; };
 		AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */; };
 		AE5D85B42AC8A224009680C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5D85B32AC8A224009680C6 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91431B9A2C88AB7C00611E3A /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		919D73612C886922000BA941 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		AE5D85AC2AC8A221009680C6 /* MobileAcebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileAcebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5D85AF2AC8A221009680C6 /* MobileAcebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAcebookApp.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				F1E9EC092C886AEB00F974C6 /* UserViewModel.swift */,
 				F52702822C872E7900C5B8E7 /* Post.swift */,
 				F52702842C872FB500C5B8E7 /* PostsViewModel.swift */,
+				91431B9A2C88AB7C00611E3A /* ProfilePageViewModel.swift */,
 				F86436F62C89F73D0059296A /* CreatePostViewModel.swift */,
 			);
 			path = Models;
@@ -346,6 +349,7 @@
 				F8E51E892C861095005418F9 /* ProfilePageView.swift in Sources */,
 				F8E51E852C861071005418F9 /* FeedPageView.swift in Sources */,
 				AE5D85E62AC9B077009680C6 /* AuthenticationServiceProtocol.swift in Sources */,
+				91431B9B2C88AB7C00611E3A /* ProfilePageViewModel.swift in Sources */,
 				F1E9EC0A2C886AEB00F974C6 /* UserViewModel.swift in Sources */,
 				F8E51E832C861062005418F9 /* LoginPageView.swift in Sources */,
 				AE5D85B02AC8A221009680C6 /* MobileAcebookApp.swift in Sources */,
