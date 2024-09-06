@@ -7,6 +7,7 @@ struct CreatePostsPageView: View {
     @State private var isImagePickerPresented = false
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var isPostSubmitted = false
     
     var body: some View {
         NavigationView {
@@ -43,10 +44,24 @@ struct CreatePostsPageView: View {
                         Button("Select an Image", action: {
                             isImagePickerPresented = true
                         })
-                        
-                        NavigationLink(destination: ContentView()) {
-                            Text("Submit")
+//                        Button("Submit your Post") {
+//                            createPost()
+//                        }
+//                        NavigationLink(destination: ContentView()) {
+//                            Text("Submit")
+////                            createPost()
+//                            
+//                        }
+                        NavigationLink(destination: ContentView(), isActive:$isPostSubmitted) {
+                            EmptyView()  // Empty view, triggered by isPostSubmitted
+                                    }
+
+                                    // Submit button to trigger createPost() and navigate
+                        Button("Submit") {
+                            createPost()  // Your post creation logic
+                            isPostSubmitted = true  // Trigger navigation
                         }
+                        .padding()
                     }
                     
                     CustomNavigationBar()
@@ -84,11 +99,11 @@ struct CreatePostsPageView: View {
         // Creating post object based on API requirements
         let postContent: [String: Any] = [
             "message": postMessage,
-            "createdAt": Date().timeIntervalSince1970,
-            "createdBy": "userId", // Replace this with your actual user's ID or fetch it as needed
+//            "createdAt": Date().timeIntervalSince1970,
+//            "createdBy": "userId", // Replace this with your actual user's ID or fetch it as needed
             "imgUrl": imgBase64String.isEmpty ? nil : imgBase64String
         ]
-        
+        print(postContent)
         // Call your post creation service
         PostServiceClass().createPost(postContent: postContent) { response, error in
             DispatchQueue.main.async {

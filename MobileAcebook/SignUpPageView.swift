@@ -104,11 +104,12 @@ struct SignUpPageView: View {
                             }
                             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
                     }
-
-                    Button("Signup") {
-                        signUp()
+                    
+                    Button("Sign Up") {
+                        signUp()  // Call the sign-up logic
+                        isSignedUp = true  // Trigger navigation when signed up successfully
                     }
-                    .accessibilityIdentifier("Signup Button")
+                    .accessibilityIdentifier("signUpButton")
                     .buttonStyle(.borderedProminent)
                     .foregroundColor(Color.white)
                     .buttonBorderShape(.roundedRectangle(radius: 20))
@@ -116,11 +117,39 @@ struct SignUpPageView: View {
                     .padding(40)
                     
                     // NavigationLink to redirect to CreatePostsPageView
-                    NavigationLink(destination: CreatePostsPageView(), isActive: $isSignedUp) {
-                        EmptyView() // Placeholder view, NavigationLink is triggered by isSignedUp
+                    NavigationLink(destination: CreatePostsPageView(), isActive:$isSignedUp){
+                        EmptyView()  // Placeholder view, the link is triggered by isSignedUp state
                     }
                 }
             }
+
+//                    Button("Signup") {
+//                        signUp()
+//                        
+//                        //                    .accessibilityIdentifier("Signup Button")
+//                        //                    .buttonStyle(.borderedProminent)
+//                        //                    .foregroundColor(Color.white)
+//                        //                    .buttonBorderShape(.roundedRectangle(radius: 20))
+//                        //                    .font(.system(.body, design: .monospaced))
+//                        //                    .padding(40)
+//                        
+//                        // NavigationLink to redirect to CreatePostsPageView
+//                        //                    NavigationLink(destination: CreatePostsPageView(), isActive: $isSignedUp) {
+//                        //                        EmptyView() // Placeholder view, NavigationLink is triggered by isSignedUp
+//                        //                    }
+//                        NavigationLink(destination: CreatePostsPageView(),isActive: $isSignedUp){
+//                            //                        Text("Sign Up")
+//                            
+//                        }
+//                    }
+//                    .accessibilityIdentifier("signUpButton")
+//                    .buttonStyle(.borderedProminent)
+//                    .foregroundColor(Color.white)
+//                    .buttonBorderShape(.roundedRectangle(radius: 20))
+//                    .font(.system(.body, design: .monospaced))
+//                    .padding(40)
+//                }
+//            }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Sign Up"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
