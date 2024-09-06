@@ -13,13 +13,15 @@ struct CreatePostsPageView: View {
             ZStack {
                 Color.black
                     .ignoresSafeArea()
-                    VStack(alignment: .center) {
-                        Image("Logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                            .accessibilityIdentifier("Acebook-Logo")
-                        Form {
+                
+                VStack(alignment: .center) {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .accessibilityIdentifier("Acebook-Logo")
+                    
+                    Form {
                         // Display the selected image, or a button to select one
                         if let image = selectedImage {
                             Image(uiImage: image)
@@ -29,43 +31,36 @@ struct CreatePostsPageView: View {
                                 .padding()
                         } else {
                             Button(action: {
+                                isImagePickerPresented = true
                             }) {
                                 TextField("What's on your mind...", text: $postMessage)
-//                                    .scrollContentBackground(.hidden)
-//                                    .sizeToFit()
-//                                    .multilineTextAlignment(.leading)
                                     .frame(width: 300.0, height: 150.0)
                                     .padding()
                             }
                             .padding([.leading, .trailing, .bottom])
                         }
-                            Button ("selected an Image", action:{
-                                
-                                isImagePickerPresented = true
-                            })
-                            NavigationLink(destination: ContentView()) {
-                                Text("Submit")
-                            }
-                            
-                        }
-                        CustomNavigationBar()
                         
+                        Button("Select an Image", action: {
+                            isImagePickerPresented = true
+                        })
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Text("Submit")
+                        }
+                    }
+                    
+                    CustomNavigationBar()
                         .background(Color.gray.opacity(0.2))
                         .edgesIgnoringSafeArea(.all)
-
-                    }
-                    .scrollContentBackground(.hidden)
-//                    .ignoresSafeArea()
-                    .edgesIgnoringSafeArea(.all)
-                    .sheet(isPresented: $isImagePickerPresented) {
-                        ImagePicker(image: $selectedImage)
-                    }
                 }
-                .navigationBarBackButtonHidden(true)
-
+                .scrollContentBackground(.hidden)
+                .edgesIgnoringSafeArea(.all)
+                .sheet(isPresented: $isImagePickerPresented) {
+                    ImagePicker(image: $selectedImage)
+                }
             }
+            .navigationBarBackButtonHidden(true)
         }
-        
     }
     
     // CreatePost function modified to work with current ViewState
@@ -78,7 +73,7 @@ struct CreatePostsPageView: View {
         }
         
         var imgBase64String = ""
-
+        
         // Check if selectedImage is nil and generate the base64 string
         if let imageData = selectedImage?.jpegData(compressionQuality: 0.01) {
             imgBase64String = imageData.base64EncodedString()
@@ -92,7 +87,7 @@ struct CreatePostsPageView: View {
             "message": postMessage,
             "createdAt": Date().timeIntervalSince1970,
             "createdBy": "userId", // Replace this with your actual user's ID or fetch it as needed
-            "imgUrl": imgBase64String.isEmpty ? nil : imgBase64String ?? ""
+            "imgUrl": imgBase64String.isEmpty ? nil : imgBase64String
         ]
         
         // Call your post creation service
@@ -109,17 +104,5 @@ struct CreatePostsPageView: View {
                 }
             }
         }
-    }
-}
-
-
-
-
-
-// Preview
-
-struct CreatePostsPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreatePostsPageView()
     }
 }
