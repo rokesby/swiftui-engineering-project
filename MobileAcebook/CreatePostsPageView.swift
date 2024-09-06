@@ -59,8 +59,7 @@ struct CreatePostsPageView: View {
                     ImagePicker(image: $selectedImage)
                 }
             }
-            .navigationBarBackButtonHidden(true)
-        }
+        }.navigationBarBackButtonHidden(true)
     }
     
     // CreatePost function modified to work with current ViewState
@@ -104,5 +103,11 @@ struct CreatePostsPageView: View {
                 }
             }
         }
+    }
+}
+
+struct CreatePostsPage_Previews: PreviewProvider {
+    static var previews: some View {
+        CreatePostsPageView()
     }
 }

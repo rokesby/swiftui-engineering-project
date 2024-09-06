@@ -1,15 +1,21 @@
 import SwiftUI
 
 struct ProfilePageView: View {
-    @StateObject private var viewModel = ProfilePageViewModel()
-
+    // Hardcoded posts
+    let posts = [
+        Post(message: "Had a great day at the beach!", comment: "Looks amazing!", likes: 120, imageUrl: "https://via.placeholder.com/300", createdAt: "2024-09-03"),
+        Post(message: "Just had an amazing lunch! 🍔", comment: "Yummy!", likes: 75, imageUrl: "", createdAt: "2024-09-04"),
+        Post(message: "Check out this cool sunset! 🌅", comment: "Beautiful view!", likes: 200, imageUrl: "https://via.placeholder.com/300", createdAt: "2024-09-01"),
+        Post(message: "Feeling productive today!", comment: "Good for you!", likes: 50, imageUrl: "", createdAt: "2024-09-05")
+    ]
+    
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView {
                     VStack {
                         VStack {
-                            Image("profilePicture") // Replace with your actual image name
+                            Image("Sunset") // Hardcoded profile picture, replace with actual image name or URL
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 150, height: 150)
@@ -27,8 +33,8 @@ struct ProfilePageView: View {
                         .padding()
 
                         VStack(spacing: 10) {
-                            ForEach(viewModel.posts) { post in
-                                if let imageUrl = URL(string: post.imageUrl), !post.imageUrl.isEmpty {
+                            ForEach(posts) { post in
+                                if !post.imageUrl.isEmpty {
                                     ImagePostView(imageName: post.imageUrl, caption: post.message)
                                 } else {
                                     TextPostView(text: post.message)
@@ -39,6 +45,7 @@ struct ProfilePageView: View {
                     }
                 }
                 CustomNavigationBar()
+                    .padding(.bottom, -30.0)
             }
             .background(Color.black.edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true) // Hides the default navigation bar

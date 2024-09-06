@@ -1,32 +1,19 @@
 import SwiftUI
-import Combine
 
 class ProfilePageViewModel: ObservableObject {
     @Published var posts: [Post] = []
 
-    private var cancellables = Set<AnyCancellable>()
-
     init() {
-        fetchPosts()
+        loadDummyPosts()
     }
 
-    func fetchPosts() {
-        guard let url = URL(string: "https://yourapi.com/api/posts") else { return }
-
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: [Post].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Failed to fetch posts:", error)
-                case .finished:
-                    break
-                }
-            }, receiveValue: { [weak self] posts in
-                self?.posts = posts
-            })
-            .store(in: &cancellables)
+    private func loadDummyPosts() {
+        // Hardcoded posts using your existing Post model
+        posts = [
+            Post(message: "Had a great day at the beach!", comment: "Looks amazing!", likes: 120, imageUrl: "https://via.placeholder.com/300", createdAt: "2024-09-03"),
+            Post(message: "Just had an amazing lunch! 🍔", comment: "Yummy!", likes: 75, imageUrl: "", createdAt: "2024-09-04"),
+            Post(message: "Check out this cool sunset! 🌅", comment: "Beautiful view!", likes: 200, imageUrl: "https://via.placeholder.com/300", createdAt: "2024-09-01"),
+            Post(message: "Feeling productive today!", comment: "Good for you!", likes: 50, imageUrl: "", createdAt: "2024-09-05")
+        ]
     }
 }
