@@ -24,8 +24,10 @@ struct ContentView: View {
             .navigationTitle("Postings")
         }
         .navigationBarBackButtonHidden(true)
-    }
+        CustomNavigationBar()
         
+    }
+    
 }
 
 // View for a single post
@@ -76,7 +78,7 @@ struct PostView: View {
         .padding()
         .onAppear{
             viewModel.fetchPosts()
-            viewModel.printPosts()
+            //viewModel.printPosts()
         }
     }
 }

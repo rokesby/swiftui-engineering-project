@@ -1,7 +1,6 @@
 import SwiftUI
 import UIKit
 
-
 // The main view
 struct CreatePostsPageView: View {
     @State private var postMessage = ""
