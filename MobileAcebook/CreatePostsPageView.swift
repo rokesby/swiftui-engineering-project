@@ -14,7 +14,6 @@ struct CreatePostsPageView: View {
             ZStack {
                 Color.black
                     .ignoresSafeArea()
-                HStack {
                     VStack(alignment: .center) {
                         Image("Logo")
                             .resizable()
@@ -39,7 +38,7 @@ struct CreatePostsPageView: View {
                                     .frame(width: 300.0, height: 150.0)
                                     .padding()
                             }
-                            .padding()
+                            .padding([.leading, .trailing, .bottom])
                         }
                             Button ("selected an Image", action:{
                                 
@@ -48,15 +47,15 @@ struct CreatePostsPageView: View {
                             NavigationLink(destination: ContentView()) {
                                 Text("Submit")
                             }
+                            
                         }
                         CustomNavigationBar()
-                        .edgesIgnoringSafeArea(.all)
+                        
                         .background(Color.gray.opacity(0.2))
-                        .cornerRadius(20)
+                        .edgesIgnoringSafeArea(.all)
 
                     }
                     .scrollContentBackground(.hidden)
-                    .padding()
 //                    .ignoresSafeArea()
                     .edgesIgnoringSafeArea(.all)
                     .sheet(isPresented: $isImagePickerPresented) {
@@ -66,8 +65,9 @@ struct CreatePostsPageView: View {
                 .navigationBarBackButtonHidden(true)
             }
         }
+        
     }
-}
+
 
 
 //class PostService {
